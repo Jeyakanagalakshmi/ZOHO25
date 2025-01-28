@@ -1,0 +1,30 @@
+//numbers_in_range
+import java.lang.*;
+import java.util.*;
+public class Main {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        numbers_in_range(n,a,x,y);
+
+    }
+    public static void numbers_in_range(int n,int a[],int x,int y){
+        if(x<y){
+            for(int i=0;i<n;i++){
+                if(a[i]>x && a[i]<y){
+                    System.out.print(a[i]+" ");
+                }
+            }
+        }
+        else{
+            System.out.print("Invalid");
+        }
+
+    }
+}
