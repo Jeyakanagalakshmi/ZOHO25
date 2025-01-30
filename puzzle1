@@ -1,0 +1,20 @@
+import java.lang.*;
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int choco_in_hand=n;
+        int cov_in_hand=choco_in_hand;
+        int rem_cov=cov_in_hand%3;
+        int tot_cho=choco_in_hand;
+        while(cov_in_hand>2){
+            choco_in_hand=(cov_in_hand)/3;
+            cov_in_hand=choco_in_hand+rem_cov;
+            rem_cov=cov_in_hand%3;
+            tot_cho=tot_cho+choco_in_hand;
+
+        }
+        System.out.print(tot_cho);
+    }
+}
