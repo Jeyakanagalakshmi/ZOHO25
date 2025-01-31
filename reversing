@@ -1,0 +1,28 @@
+import java.lang.*;
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int start=0,end=s.length()-1;
+        for(int i=s.length()-1;i>=0;i--){
+            if(s.charAt(i)!=' '){
+                continue;
+            }
+            else{
+                start=i+1;
+                reverse(s,start,end);
+                end=i-1;
+            }
+        }
+        reverse(s,0,end);
+    }
+    public static void reverse(String s,int start,int end){
+        String t="";
+        for(int i=start;i<=end;i++){
+            t=t+s.charAt(i);
+        }
+        t=t+" ";
+        System.out.print(t);
+    }
+}
