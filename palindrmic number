@@ -1,0 +1,23 @@
+//palindromic no
+import java.lang.*;
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int temp=n,sum=0,a=0;
+        while(temp!=0){
+            a=temp%10;
+            sum=sum*10+a;
+            temp=temp/10;
+
+        }
+        if(sum==n){
+            System.out.print("Palindrome");
+        }
+        else{
+            System.out.print("Not Palindrome");
+        }
+
+    }
+}
