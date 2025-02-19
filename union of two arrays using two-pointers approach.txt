@@ -1,0 +1,66 @@
+//union of two arrays using two-pointers approach
+
+import java.lang.*;
+import java.util.*;
+class Zoho{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+        int a[]=new int[m];
+        int b[]=new int[n];
+        for(int i=0;i<m;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            b[i]=sc.nextInt();
+        }
+        Arrays.sort(a);
+        Arrays.sort(b);
+        List <Integer> f=new ArrayList<>();
+        int i=0,j=0;
+        while(i<m && j<n){
+            if(i>0 && a[i]==a[i-1]){
+                i++;
+                continue;
+            }
+            if(j>0 && b[j]==b[j-1]){
+                j++;
+                continue;
+            }
+            if(a[i]<b[j]){
+                f.add(a[i]);
+                i++;
+            }
+            else if(b[j]>a[i]){
+                f.add(b[j]);
+                j++;
+            }
+            else{
+                f.add(a[i]);
+                i++;
+                j++;
+            }
+        }
+        while(i<m){
+            if(i>0 && a[i]==a[i-1]){
+                i++;
+                continue;
+            }
+            f.add(a[i]);
+            i++;
+        }
+        while(j<n){
+            if(j>0 && b[j]==b[j-1]){
+                j++;
+                continue;
+            }
+            f.add(b[j]);
+            j++;
+        }
+        for(int k:f){
+            System.out.print(k+" ");
+        }
+    }
+}

@@ -1,0 +1,33 @@
+// union of two arrays
+import java.lang.*;
+import java.util.*;
+class Zoho{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+        int a[]=new int[m];
+        int b[]=new int[n];
+        for(int i=0;i<m;i++){
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            b[i]=sc.nextInt();
+        }
+        Arrays.sort(a);
+        Arrays.sort(b);
+        HashSet <Integer> hs=new HashSet();
+        for(int i:a){
+            hs.add(i);
+        }
+        for(int j:b){
+            hs.add(j);
+        }
+        for(int k:hs){
+            System.out.print(k+" ");
+        }
+
+
+
+    }
+}
